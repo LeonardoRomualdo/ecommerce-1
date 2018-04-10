@@ -1,12 +1,12 @@
-package br.edu.up.divergentes.ecommerce;
+package br.edu.up.convergentes.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EcoomerceApplication {
+public class EcommerceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EcoomerceApplication.class, args);
+		SpringApplication.run(EcommerceApplication.class, args);
 	}
 }
