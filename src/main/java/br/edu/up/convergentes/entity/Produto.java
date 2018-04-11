@@ -1,4 +1,4 @@
-package br.edu.up.convergentes.models;
+package br.edu.up.convergentes.entity;
 
 import java.math.BigDecimal;
 import java.sql.Date;
