@@ -1,15 +1,20 @@
 package br.edu.up.convergentes.service;
 
+import java.security.Principal;
+import java.util.Collection;
+
+import br.edu.up.convergentes.exception.BusinessException;
+
 public interface GenericService<T> {
 	
-	T find(Long codigo);
+	T find(Principal principal, Long codigo) throws BusinessException;
 	
-//	Collection<T> findAll(  );
+	Collection<T> findAll( Principal principal );
 
-	void save(T clazz);
+	void save(Principal principal, T clazz) throws BusinessException;
 
-	void update(T clazz);
+	void update(Principal principal, T clazz) throws BusinessException;
 	
-	void delete(T clazz);
+	void delete(Principal principal, T clazz) throws BusinessException;
 
 }

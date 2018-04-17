@@ -20,5 +20,6 @@ public interface GenericRepository<T, ID extends Serializable> {
 	public Collection<T> findInRange(int firstResult, int maxResults);
 
 	public Long count();
-
+	
+	public void executeUpdateNativeQuery(StringBuffer nativeQuery);
 }

@@ -6,11 +6,12 @@ import java.util.Collection;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 /**
  * Implementação padrão genérica para muitas
- * funcionalidades utilizado em mecanismos de persistência. Oferece métodos
+ * funcionalidades utilizadas em mecanismos de persistência. Oferece métodos
  * padrão CRUD para JPA.
  * 
  * @param <T>
@@ -20,7 +21,6 @@ import javax.transaction.Transactional;
  */
 
 public abstract class GenericRepositoryImpl<T, ID extends Serializable> {
-
 	
 	private Class<T> persistentClass;
 
@@ -83,4 +83,8 @@ public abstract class GenericRepositoryImpl<T, ID extends Serializable> {
 						+ " t").getSingleResult();
 	}
 	
+	public void executeUpdateNativeQuery(StringBuffer nativeQuery) {
+		Query query  =  entityManager.createNativeQuery( nativeQuery.toString() );
+		query.executeUpdate();
+	}
 }
