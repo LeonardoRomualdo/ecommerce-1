@@ -5,7 +5,7 @@ import java.util.Collection;
 
 import org.hibernate.exception.ConstraintViolationException;
 
-public interface GenericRepository<T, ID extends Serializable> {
+public interface GenericRepository <T, ID extends Serializable> {
 	
 	public T find(ID id);
 

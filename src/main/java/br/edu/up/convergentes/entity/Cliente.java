@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table(name = "usuario", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "cliente", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class Cliente {
 	
 	@Id
@@ -37,7 +37,7 @@ public class Cliente {
 	private String senha;
 		
 	@JsonBackReference
-	@OneToOne(fetch=FetchType.EAGER, mappedBy="usuario")
+	@OneToOne(fetch=FetchType.EAGER, mappedBy="cliente")
 	private Pessoa pessoa;
 
 	public Cliente() {
