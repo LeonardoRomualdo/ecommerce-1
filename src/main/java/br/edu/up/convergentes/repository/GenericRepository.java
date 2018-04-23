@@ -9,7 +9,7 @@ public interface GenericRepository <T, ID extends Serializable> {
 	
 	public T find(ID id);
 
-	public void save(T entity);
+	public T save(T entity);
 
 	public T update(T entity);
 

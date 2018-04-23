@@ -2,15 +2,10 @@ package br.edu.up.convergentes.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name="telefone")
@@ -32,10 +27,10 @@ public class Telefone {
 	@Column
 	private Long ramal;
 	
-	@JsonBackReference
-	@ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="codigo_pessoa")
-	private Pessoa pessoa;
+//	@JsonBackReference
+//	@ManyToOne(fetch=FetchType.EAGER)
+//    @JoinColumn(name="codigo_pessoa")
+//	private Pessoa pessoa;
 
 	public Telefone() {
 		super();
@@ -49,7 +44,7 @@ public class Telefone {
 		this.ddd = ddd;
 		this.numero = numero;
 		this.ramal = ramal;
-		this.pessoa = pessoa;
+//		this.pessoa = pessoa;
 	}
 
 	public Telefone(String tipoTelefone, Long ddd, Long numero, Long ramal, Pessoa pessoa) {
@@ -58,7 +53,7 @@ public class Telefone {
 		this.ddd = ddd;
 		this.numero = numero;
 		this.ramal = ramal;
-		this.pessoa = pessoa;
+//		this.pessoa = pessoa;
 	}
 
 	public Long getId() {
@@ -99,13 +94,5 @@ public class Telefone {
 
 	public void setRamal(Long ramal) {
 		this.ramal = ramal;
-	}
-
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
 	}
 }

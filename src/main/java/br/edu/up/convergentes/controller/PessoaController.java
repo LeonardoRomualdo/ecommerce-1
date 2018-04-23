@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.up.amigorest.models.Amigo;
 import br.edu.up.convergentes.entity.Pessoa;
 import br.edu.up.convergentes.repository.PessoaRepository;
 
@@ -21,7 +20,7 @@ import br.edu.up.convergentes.repository.PessoaRepository;
 @RequestMapping("/pessoa")
 public class PessoaController {
 	
-	@Autowired
+//	@Autowired
 	private PessoaRepository pessoaRepository;
 	
 	@PostMapping()
@@ -30,9 +29,9 @@ public class PessoaController {
 	}
 	
 	@GetMapping(produces="application/json")
-	public @ResponseBody Pessoa listaPessoa() {
+	public @ResponseBody Collection<Pessoa> listaPessoa() {
 		Collection<Pessoa> listaPessoas = pessoaRepository.findAll();
-		return pessoaRepository;
+		return listaPessoas;
 	}
 	
 	@DeleteMapping()

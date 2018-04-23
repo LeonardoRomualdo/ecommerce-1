@@ -1,6 +1,7 @@
 package br.edu.up.convergentes.repository.impl;
 
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 
@@ -29,11 +30,11 @@ public abstract class GenericRepositoryImpl<T, ID extends Serializable> {
 	
 	protected SimpleDateFormat sdfSql = new SimpleDateFormat("yyyy-MM-dd");
 
-//	@SuppressWarnings("unchecked")
-//	public GenericRepositoryImpl() {
-//		this.persistentClass = (Class<T>) ((ParameterizedType) getClass()
-//				.getGenericSuperclass()).getActualTypeArguments()[0];
-//	}
+	@SuppressWarnings("unchecked")
+	public GenericRepositoryImpl() {
+		this.persistentClass = (Class<T>) ((ParameterizedType) getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[0];
+	}
 
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
@@ -48,8 +49,9 @@ public abstract class GenericRepositoryImpl<T, ID extends Serializable> {
 	}
 
 	@Transactional
-	public void save(T entity) {
+	public T save(T entity) {
 		entityManager.persist(entity);
+		return entity;
 	}
 
 	@Transactional

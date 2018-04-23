@@ -41,8 +41,6 @@ public class Cliente {
 	private Pessoa pessoa;
 
 	public Cliente() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Cliente(Long id, @NotNull(message = "{error.entity.field.mandatory}") @Size(min = 1, max = 255) String nome,

@@ -49,14 +49,14 @@ public class Pessoa {
 	@Size(min=1, max=255)
 	private String email;
 	
-	@JsonManagedReference
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="pessoa", cascade=CascadeType.ALL)
-	private List<Telefone> telefones = new ArrayList<>();
+//	@JsonManagedReference
+//	@OneToMany(fetch=FetchType.LAZY, mappedBy="pessoa", cascade=CascadeType.ALL)
+//	private List<Telefone> telefones = new ArrayList<>();
 	
-	@JsonManagedReference
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="pessoa", cascade=CascadeType.ALL)
-//	@OrderBy("ativo DESC")
-	private List<Endereco> enderecos = new ArrayList<>();
+//	@JsonManagedReference
+//	@OneToMany(fetch=FetchType.LAZY, mappedBy="pessoa", cascade=CascadeType.ALL)
+////	@OrderBy("ativo DESC")
+//	private List<Endereco> enderecos = new ArrayList<>();
 
 	public Pessoa() {
 		super();
@@ -70,8 +70,8 @@ public class Pessoa {
 		this.cliente = cliente;
 		this.documento = documento;
 		this.email = email;
-		this.telefones = telefones;
-		this.enderecos = enderecos;
+//		this.telefones = telefones;
+//		this.enderecos = enderecos;
 	}
 
 	public Pessoa(Long id, @Size(min = 1, max = 255) String tipoPessoa, Cliente cliente,
@@ -83,8 +83,8 @@ public class Pessoa {
 		this.cliente = cliente;
 		this.documento = documento;
 		this.email = email;
-		this.telefones = telefones;
-		this.enderecos = enderecos;
+//		this.telefones = telefones;
+//		this.enderecos = enderecos;
 	}
 	
 
@@ -137,20 +137,20 @@ public class Pessoa {
 		this.email = email;
 	}
 
-	public List<Telefone> getTelefones() {
-		return telefones;
-	}
-
-	public void setTelefones(List<Telefone> telefones) {
-		this.telefones = telefones;
-	}
-
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
-	}
+//	public List<Telefone> getTelefones() {
+//		return telefones;
+//	}
+//
+//	public void setTelefones(List<Telefone> telefones) {
+//		this.telefones = telefones;
+//	}
+//
+//	public List<Endereco> getEnderecos() {
+//		return enderecos;
+//	}
+//
+//	public void setEnderecos(List<Endereco> enderecos) {
+//		this.enderecos = enderecos;
+//	}
 	
 }

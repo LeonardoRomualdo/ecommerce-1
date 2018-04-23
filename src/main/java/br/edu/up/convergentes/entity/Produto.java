@@ -1,7 +1,7 @@
 package br.edu.up.convergentes.entity;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "produtos")
+@Table(name = "produto")
 public class Produto {
 
 	@Id
@@ -34,8 +34,8 @@ public class Produto {
 	@Size(min = 1, max = 255)
 	private String genero;
 	
-	@Column(name="data_de_lancamento")
-	@Temporal(TemporalType.DATE)
+	@Column(name="data_lancamento")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataLancamento;
 	
 	@Column(name="descricao")

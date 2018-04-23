@@ -14,15 +14,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.up.convergentes.entity.Endereco;
-import br.edu.up.convergentes.entity.Pessoa;
 import br.edu.up.convergentes.repository.EnderecoRepository;
-import br.edu.up.convergentes.repository.PessoaRepository;
 
 @RestController
 @RequestMapping("/endereco")
 public class EnderecoController {
 	
-	@Autowired
+//	@Autowired
 	private EnderecoRepository enderecoRepository;
 	
 	@PostMapping()
@@ -31,9 +29,9 @@ public class EnderecoController {
 	}
 	
 	@GetMapping(produces="application/json")
-	public @ResponseBody Endereco listaEndereco() {
+	public @ResponseBody Collection<Endereco> listaEndereco() {
 		Collection<Endereco> listaEndereco = enderecoRepository.findAll();
-		return enderecoRepository;
+		return listaEndereco;
 	}
 	
 	@DeleteMapping()

@@ -16,22 +16,15 @@ public class Venda {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long Id;
 	
-	
 	private Long id_produto;
-	
 	
 	private Long id_cliente;
 	
-	
 	private BigDecimal desconto;
-	
 	
 	private BigDecimal valorTotal;
 
-
 	public Venda() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Venda(Long id, Long id_produto, Long id_cliente, BigDecimal desconto, BigDecimal valorTotal) {
