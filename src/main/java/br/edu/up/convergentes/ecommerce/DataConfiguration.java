@@ -44,9 +44,9 @@ public class DataConfiguration {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/db_ecommerce");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/db_ecommerce?useSSL=false");
         dataSource.setUsername("root");
-        dataSource.setPassword("zequini150288");
+        dataSource.setPassword("");
         return dataSource;
     }
 

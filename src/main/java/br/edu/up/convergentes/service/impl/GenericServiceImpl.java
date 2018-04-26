@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import br.edu.up.convergentes.repository.EnderecoRepository;
 import br.edu.up.convergentes.repository.PessoaRepository;
 import br.edu.up.convergentes.repository.ProdutoRepository;
+import br.edu.up.convergentes.repository.VendaRepository;
 import br.edu.up.convergentes.service.GenericService;
 
 public abstract class GenericServiceImpl<T> implements GenericService<T> {
@@ -27,8 +28,8 @@ public abstract class GenericServiceImpl<T> implements GenericService<T> {
 	
 //	@Autowired
 //	protected TelefoneRepository telefoneRepository;
-//	
-//	@Autowired
-//	protected VendaRepository vendaRepository;	
+	
+	@Autowired
+	protected VendaRepository vendaRepository;	
 	
 }
